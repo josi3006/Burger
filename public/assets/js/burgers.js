@@ -30,6 +30,8 @@ $(function () {
             burger_name: $("#ca").val().trim(),
         };
 
+        console.log('here is the new burger: ', newBurger)
+
         // Creates a new burger
 
         $.ajax("/api/burgers", {

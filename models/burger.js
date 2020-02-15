@@ -6,11 +6,12 @@ var orm = require("../config/orm.js");
 var burger = {
     selectAll: function (cb) {
         orm.selectAll("burgers", function (res) {
+            console.log('in burger.js: ' + res);
             cb(res);
         });
     },
     insertOne: function (newBurger, cb) {
-        orm.insertOne("burgers", newBurger, function (res) {
+        orm.insertOne(newBurger, function (res) {
             cb(res);
         });
     },

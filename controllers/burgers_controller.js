@@ -2,7 +2,10 @@ const express = require("express");
 
 const burger = require("../models/burger.js");
 
-var router = express.Router();
+const router = express.Router();
+
+
+console.log('top of burgers_controller.js');
 
 
 // This code selects all burgers
@@ -12,8 +15,10 @@ router.get("/", function (req, res) {
         var hbsObject = {
             burgers: data
         };
-        console.log(hbsObject);
+        console.log("Here\'s the stuff: " + hbsObject);
         res.render("index", hbsObject);
+        res.redirect("/");
+
     });
 });
 
@@ -21,9 +26,12 @@ router.get("/", function (req, res) {
 // This code posts a new burger
 
 router.post("/api/burgers", function (req, res) {
-    burger.insertOne(["burger_name"],
-        [req.body.burger_name], function (result) {
-            res.json({ id: result.insertId });
+    console.log(req.body);
+    burger.insertOne(req.body.burger_name, function (result) {
+            console.log('in controller: ' + result)
+            // res.redirect({ id: result.insertId });
+            res.redirect("/");
+
         });
 });
 
@@ -43,6 +51,8 @@ router.put("/api/burgers/:id", function (req, res) {
         } else {
             res.status(200).end();
         }
+        res.redirect("/");
+
     });
 });
 
