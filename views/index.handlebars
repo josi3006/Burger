@@ -1,35 +1,71 @@
-<h1>BURGER IMG HERE</h1> 
+<div class='container'>
 
-<h2>Burgers not devoured</h2>
+  <div class='row mb-5' name='topRow' align='center'>
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=true}}
-    {{/unless}}
-  {{/each}}
+    <div class='col'>
 
+      <img src='./assets/img/burgertoon.gif' alt="yummy burger pic" width="200">
 
-</ul>
+      <h1>It's Burger Time!</h1>
 
-<h2>Burgers that ARE devoured</h2>
+    </div>
 
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Enter a burger name and click 'Make It!'</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
   </div>
 
 
-  <button type="submit">Make It!</button>
-</form>
+  <div class='row' name='mainContentRow'>
+
+    <div class='col-4 mt-4'>
+
+      <h2>Burgers not devoured</h2>
+
+      <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
+        {{> burgers/burger-block devoured=true}}
+        {{/unless}}
+        {{/each}}
+
+
+      </ul>
+
+    </div>
+
+    
+
+    <div class='col-4'>
+
+
+      <h2>Enter a burger name and click 'Make It!'</h2>
+      <form class="create-form">
+
+        <div class="form-group">
+          <label for="ca">Burger Name:</label>
+          <input type="text" id="ca" name="name">
+        </div>
+
+
+        <button type="submit">Make It!</button>
+      </form>
+
+    </div>
+
+
+
+    <div class='col-4 mt-4'>
+
+
+      <h2>Burgers that ARE devoured</h2>
+
+      <ul>
+        {{#each burgers}}
+        {{#if devoured}}
+        {{> burgers/burger-block devoured=false}}
+        {{/if}}
+        {{/each}}
+      </ul>
+
+    </div>
+
+
+  </div>
