@@ -2,7 +2,6 @@ var connection = require("../config/connection.js");
 
 
 // This code sets up the orm object
-// 
 
 var orm = {
     selectAll: function() {
