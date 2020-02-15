@@ -6,10 +6,13 @@ $(function () {
         var id = $(this).data("id");
         var newState = $(this).data("newstate");
 
+        console.log('newState in burgers.js is: ', newState);
+
         var newDevouredState = {
             devoured: newState
         };
 
+        console.log('newDevouredState is: ', newDevouredState);
         // Changes the 'devoured' state
 
         $.ajax("/api/burgers/" + id, {
