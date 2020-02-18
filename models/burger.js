@@ -14,8 +14,15 @@ var burger = {
             cb(res);
         });
     },
-    updateOne: function (id, cb) {
-        orm.updateOne("burgers", id, function (res) {
+    updateOne: function (id, x, cb) {
+
+        // var devouredState = this.devoured;
+        console.log('------------------------');
+        console.log('x in burger.js is: ', x);
+        console.log('id in burger.js is: ', id);
+        console.log('cb in burger.js is: ', cb);
+
+        orm.updateOne( id, x, cb, function (res) {
             cb(res);
         });
     }

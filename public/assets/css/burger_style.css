@@ -1,7 +1,7 @@
 li {
     padding: 5px;
     margin: 5px;
-    background: #faebd7;
+    background: #ffc06d;
   }
   
   .label {
@@ -19,6 +19,5 @@ li {
   }
 
   body {
-
-    background: #fff8b4;
+    background-color: #fff8b4 !important;
   }

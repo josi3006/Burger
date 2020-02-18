@@ -15,9 +15,9 @@
 
   <div class='row' name='mainContentRow'>
 
-    <div class='col-4 mt-4'>
+    <div class='col-4'>
 
-      <h2>Burgers not devoured</h2>
+      <p class="text-center">Burgers waiting to be devoured:</p>
 
       <ul>
         {{#each burgers}}
@@ -33,29 +33,28 @@
 
     
 
-    <div class='col-4'>
+    <div class='col-4 text-center'>
 
 
-      <h2>Enter a burger name and click 'Make It!'</h2>
+      <small>Enter a burger name and click 'Make It!'</small>
       <form class="create-form">
 
         <div class="form-group">
-          <label for="ca">Burger Name:</label>
-          <input type="text" id="ca" name="name">
+          <input type="text" id="ca" name="name" placeholder='Burger Name'>
         </div>
 
 
-        <button type="submit">Make It!</button>
+        <button type="submit" class="btn btn-danger">Make It!</button>
       </form>
 
     </div>
 
 
 
-    <div class='col-4 mt-4'>
+    <div class='col-4'>
 
 
-      <h2>Burgers that ARE devoured</h2>
+      <p class="text-center">Burgers that have been devoured</p>
 
       <ul>
         {{#each burgers}}
