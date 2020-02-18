@@ -18,11 +18,10 @@ var orm = {
         cb(result);
       });
     },
-    updateOne: function(id, x, cb) {
+    updateOne: function(id, cb) {         // correct is (id, cb)
 
       console.log('------------------------');
-      console.log('x in orm is: ', x);
-      console.log('id: ', id);
+      console.log('id in orm is: ', id);
       console.log('cb in orm is: ', cb);
 
 

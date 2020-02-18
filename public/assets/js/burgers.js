@@ -3,8 +3,8 @@
 
 $(function () {
     $(".change-devoured").on("click", function (event) {
+        event.preventDefault();
 
-        console.log('devoured?: ' + $(this).is("devoured"));
 
         var id = $(this).data("id");
         var state = $(this).is("devoured");  
@@ -21,13 +21,14 @@ $(function () {
 
 
         var newDevouredState = {
-            devoured: newState
+            devoured: newState,
         };
 
+        console.log('nDS is: ', newDevouredState);
         // Changes the 'devoured' state
 
         console.log('id is: ', id);
-        console.log('route is: /api/burgers/', id);
+        console.log('route is: /api/burgers/' + id);
         // console.log(/api/burgers/id);
 
         $.ajax("/api/burgers/" + id, {
