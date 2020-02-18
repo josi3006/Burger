@@ -4,4 +4,4 @@ An app using node, express, MySQL and handlebars that allows the user to "build"
 Here is a screenshot of the app:
 
 
-![Burger Screenshot](burgerscreen.png)
+![Burger Screenshot](/public/assets/img/burgerscreen.png)
