@@ -17,16 +17,10 @@ $(function () {
             var newState = 1;
         };
 
-        console.log('newState is: ' + state);
-
 
         var newDevouredState = {
             devoured: newState,
         };
-
-        // console.log('nDS is: ', newDevouredState);
-        // console.log('id is: ', id);
-        // console.log('route is: /api/burgers/' + id);
 
         $.ajax("/api/burgers/" + id, {
             type: "PUT",

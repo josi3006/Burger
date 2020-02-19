@@ -14,12 +14,7 @@ var burger = {
             cb(res);
         });
     },
-    updateOne: function (id, state, cb) {      // correct is id, cb
-
-        console.log('------------------------');
-        console.log('id in burger.js is: ', id);
-        console.log('cb in burger.js is: ', cb);
-
+    updateOne: function (id, state, cb) {     
         orm.updateOne(id, state, cb, function (res) {
             cb(res);
         });
