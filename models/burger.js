@@ -14,13 +14,13 @@ var burger = {
             cb(res);
         });
     },
-    updateOne: function (id, cb) {      // correct is id, cb
+    updateOne: function (id, state, cb) {      // correct is id, cb
 
         console.log('------------------------');
         console.log('id in burger.js is: ', id);
         console.log('cb in burger.js is: ', cb);
 
-        orm.updateOne(id, cb, function (res) {
+        orm.updateOne(id, state, cb, function (res) {
             cb(res);
         });
     }

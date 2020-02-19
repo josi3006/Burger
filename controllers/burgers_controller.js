@@ -9,7 +9,7 @@ const router = express.Router();
 
 router.get("/", function (req, res) {
     burger.selectAll(function (data) {
-        
+        console.log("data:",data)
         var hbsObject = {
             burgers: data
         };
@@ -33,17 +33,19 @@ router.post("/api/burgers", function (req, res) {
 
 router.put("/api/burgers/:id", function (req, res) {
     const id = req.params.id;
+    const devState = req.body.devoured;
 
-    console.log('id in controller: ', id);
+console.log('devState in controller is: ', devState);
 
-        burger.updateOne(id, function (result) {
+        burger.updateOne(id, devState, function (result) {
 
         if (result.changedRows == 0) {
 
             return res.status(404).end();
 
         } else {
-            res.status(200).end();
+
+            return res.status(200).end();
         }
 
     });

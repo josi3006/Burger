@@ -18,17 +18,19 @@ var orm = {
         cb(result);
       });
     },
-    updateOne: function(id, cb) {         // correct is (id, cb)
+    updateOne: function(id, state, cb) {         // correct is (id, cb)
 
       console.log('------------------------');
       console.log('id in orm is: ', id);
       console.log('cb in orm is: ', cb);
+      console.log('states: ', state);
 
 
-      var queryString = "UPDATE burgers SET devoured = 1 WHERE id = ?";
+      var queryString = "UPDATE burgers SET devoured = ? WHERE id = ?";
   
-      connection.query(queryString, [id], function(err, result) {
+      connection.query(queryString, [state, id], function(err, result) {
           if (err) throw err;
+          console.log(result);
           cb(result);
         }
       );
